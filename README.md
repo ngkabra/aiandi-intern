@@ -58,7 +58,7 @@ The task below is a small version of "Checking the AI".
 1. Click the green **Use this template** button at the top of this repository's GitHub page to make your own public copy.
 2. Use AI to clone your copy (created after you click on "Use this template") on your computer.
 3. Get a free Cloudflare account and an API token for Workers AI. Put your account ID and token in a copy of `cloud-flare.sh` named `cloud-flare.local.sh`.
-4. Write a Python program that uses Cloudflare's **Clef** model to classify each comment as acceptable, toxic or spam. [CLEF_API.md](CLEF_API.md) explains the API and has sample code.
+4. Write a Python program that uses Cloudflare's **Clef** model (`clef-flash`) to classify each comment as acceptable, toxic or spam. [CLEF_API.md](CLEF_API.md) explains the API and has sample code.
 5. Have the program write an HTML page that shows each comment with its
    classification, and is easy to scan.
 6. Create an empty file called `MISTAKES.md`. Then, read every comment and its classification yourself to check Clef's work. Wherever Clef made a mistake, add the comment to `MISTAKES.md` with:
@@ -67,13 +67,14 @@ The task below is a small version of "Checking the AI".
    - one or two sentences on why.
 
    If a comment is borderline, say so and explain your choice.
+7. Now repeat steps 4 to 6 with the harder comments in `comments-v2.json`, using the larger `clef` model instead of `clef-flash`. You may improve your criteria first. Name the HTML page `results-v2.html` and the file with Clef's mistakes `MISTAKES-v2.md`.
 
-Use AI tools as much as you like for steps 1 to 5. Step 6 is about your own judgement, and is the most important part of the task: do not ask an AI to do it for you.
+Use AI tools as much as you like for steps 1 to 5. Step 6, and the same check in step 7, are about your own judgement, and are the most important part of the task: do not ask an AI to do them for you.
 
 ## How to submit
 
 1. At this point, you will have your own copy of the repository.
-2. To the repository, add your program, the generated HTML, and the `MISTAKES.md` file.
+2. To the repository, add your program, both generated HTML pages, and the `MISTAKES.md` and `MISTAKES-v2.md` files.
 3. Create a new file called `NOTES.md`. In this, add a few lines indicating how to run your program. Then add a short description of what tools/models you used to complete this task, and overall what you felt about doing this.
 4. Before you push, make sure that your API token is not in any file that will get committed and pushed. This repository has been configured to not check in the `cloud-flare.local.sh` file, which contains your API token.
 5. Commit and push your changes to GitHub. Then check on GitHub that `cloud-flare.local.sh` did not get pushed.
